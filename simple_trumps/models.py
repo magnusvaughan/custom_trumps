@@ -8,7 +8,7 @@ class Deck(models.Model):
 
 
 class Card(models.Model):
-    deck = models.ForeignKey(Deck, on_delete=models.CASCADE)
+    deck = models.ForeignKey(Deck, related_name='card_deck', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     image_url = models.CharField(max_length=200)
     physical_strength = models.IntegerField(default=0)
